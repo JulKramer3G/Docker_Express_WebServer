@@ -12,6 +12,4 @@ RUN npm install server
 # Copy sources
 COPY website ./website
 
-# Expose port
-EXPOSE 8080
 CMD [ "node", "server/server.js" ]
