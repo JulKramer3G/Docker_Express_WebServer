@@ -9,6 +9,10 @@ Docker template repository for use with an express web server in node.js. With a
 
 Call the web interface on your machine via http://localhost:49160
 
+## Local build and run of the node.js server
+Go to the `server` directory and execute `npm install`.
+Inside the `server` directory, call `node server.js` to execute the server. You can access the interface via http://localhost:80
+
 ### Note: Private repositories
 To pull private repositories, you have to create a access token first, go to https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token:
 
