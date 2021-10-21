@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "nodejs_web_server": "file:server"
+  }
+}

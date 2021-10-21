@@ -1,8 +1,17 @@
-# Container image that runs your code
-FROM alpine:3.10
+FROM node:14
 
-# Copies your code file from your action repository to the filesystem path `/` of the container
-COPY entrypoint.sh /entrypoint.sh
+# Create app directory
+WORKDIR /usr/workdir
 
-# Code file to execute when the docker container starts up (`entrypoint.sh`)
-ENTRYPOINT ["/entrypoint.sh"]
+# Install app dependencies
+COPY server ./server
+RUN npm install server
+# If you are building your code for production
+# RUN npm ci --only=production
+
+# Copy sources
+COPY website ./website
+
+# Expose port
+EXPOSE 8080
+CMD [ "node", "server/server.js" ]
